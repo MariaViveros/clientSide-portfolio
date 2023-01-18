@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Jquery UI Example</title>
+<style>
+	h1 {		color: 				red; }
+	p {			color: 				white; }
+	body {		background-color: 	lightgreen; }
+	#box1 {		width:				100px;
+				height:				100px;
+				position:			absolute; 
+				top: 				50px;
+				left: 				50px;
+				background-color:	blue;}
+	#box2 {		width:				100px;
+				height:				100px;
+				position:			absolute; 
+				top: 				50px;
+				left: 				250px;
+				background-color:	red;}
+	#box3 {		width:				100px;
+				height:				100px;
+				position:			absolute; 
+				top: 				50px;
+				left: 				450px;
+				background-color:	green;}
+	#buttonA {	position:			absolute;
+				top:				200px;
+				left:				50px;}
+	#buttonB {	position:			absolute;
+				top:				200px;
+				left:				250px;}
+	#buttonC {	position:			absolute;
+				top:				200px;
+				left:				450px;}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+	$(document).ready(function () {
+		$("#buttonA").click(function() {
+			$("#box1").effect("blind", "slow");
+		});
+
+		$("#buttonB").click(function() {
+			$("#box2").effect("bounce", 2000);
+		});
+
+		$("#buttonC").click(function() {
+			$("#box3").toggle("explode", 1000);
+		});
+	});
+</script>
+
+</head>
+<body>
+<h1>Jquery UI Effects Example</h1>
+<div id="box1">
+	<p>BOX 1</p>
+</div>
+<div id="box2">
+	<p>BOX 2</p>
+</div>
+<div id="box3">
+	<p>BOX 3</p>
+</div>
+<button id="buttonA">Button A</button>
+<button id="buttonB">Button B</button>
+<button id="buttonC">Button C</button>
+
+</body>
+</html>

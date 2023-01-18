@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Browser Detection</title>
+<style>
+	h1 {		color: 				red; }
+	p {			color: 				blue; }
+	body {		background-color: 	lightgreen; }
+</style>
+<script>
+
+	function getBrowserInfo() {
+		document.getElementById("p1").innerHTML = "The appCodeName is set to : " + window.navigator.appCodeName;
+		document.getElementById("p2").innerHTML = "The appName is set to : " + window.navigator.appName;
+		document.getElementById("p3").innerHTML = "The appVersion is set to : " + window.navigator.appVersion;
+		document.getElementById("p4").innerHTML = "The userAgent is set to : " + window.navigator.userAgent;
+		document.getElementById("p5").innerHTML = "The platform is set to : " + window.navigator.platform;
+		document.getElementById("p6").innerHTML = "The language is set to : " + window.navigator.language;
+	}
+
+</script>
+</head>
+
+<body onload="getBrowserInfo()">
+<h1>Window Information</h1>
+<p>View this page in multiple browsers please</p>
+<p id="p1">The appCodeName is set to :</p>
+<p id="p2">The appName is set to :</p>
+<p id="p3">The appVersion is set to :</p>
+<p id="p4">The userAgent is set to :</p>
+<p id="p5">The platform is set to :</p>
+<p id="p6">The language is set to :</p>
+</body>
+</html>

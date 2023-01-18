@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Author: 		MARIA VIVEROS -->
+	<!-- Date: 			02/04/2022 -->
+	<!-- Class:			CSCI 2240 - Client Side Programming -->
+	<!-- Instructor:	Darren Pearson -->
+    <title>Handout 2 - Part 1</title>
+	<style type="text/css">
+		body {				background-color: 	darkblue; }
+		#hourSection { width: 50px;	
+					   margin: 10px;
+					   height: 25px;
+					   background-color: lightgray;
+					   }
+		#minuteSection { width: 50px;
+						 margin: 10px;
+					     height: 25px;
+					     background-color: lightgray;	}
+		#secondSection { width: 50px;
+						 margin: 10px;
+					     height: 25px;
+					     background-color: lightgray;	}
+		#timeOfDaySection {	width: 50px;
+							margin: 10px;
+					        height: 25px;
+					        background-color: lightgray; }					
+		#button1 { margin: 10px;		}
+		#container { background-color: lightblue;
+					 border: 5px solid black;
+					 padding: 20px;
+					 width: 400px;
+					 height:175px;	}
+	</style>
+	<script>
+		function displayTime(){
+			var rightNow = new Date();
+			var currentHour = rightNow.getHours();
+			var currentMinute = rightNow.getMinutes();
+			var currentSecond = rightNow.getSeconds();
+			var timeOfDay = "PM";
+
+			if (currentHour > 11) {
+				currentHour = currentHour - 12; 
+			} else {
+				timeOfDay = "AM";
+			}
+
+			document.getElementById("hourSection").value = currentHour;
+			document.getElementById("minuteSection").value = currentMinute;
+			document.getElementById("secondSection").value = currentSecond;
+			document.getElementById("timeOfDaySection").value = timeOfDay;
+
+		}
+			
+	</script>
+	
+</head>
+<body onload="displayTime()">
+<div id="container">
+	<h1>Date Example</h1>
+
+	<form action="" method="post" name="clockArea">
+		<input type="text" name="hourSection" id="hourSection">
+		<input type="text" name="minuteSection" id="minuteSection">
+		<input type="text" name="secondSection" id="secondSection">
+		<input type="text" name="timeOfDaySection" id="timeOfDaySection">
+	</form>
+	
+	<div name="button1" id="button1">	
+		<input type="button" value="Update Time" onclick="displayTime()" />
+	</div>
+</div>
+
+</body>
+</html>

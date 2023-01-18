@@ -1,0 +1,71 @@
+<html >
+<head>
+    <title>Shuffle Example 2</title>
+	<style>
+		body {	background-color: 	lightblue; }
+		td {	border: 			5px black solid;
+				padding:			10px; }
+		table {	margin-left:		100px; 
+				border:				10px red solid; }
+	</style>
+	<script>
+		function showDeck(arrayName, boxNumber) {
+
+			var i = 0;
+			var string1 = "<table>";
+			for(i = 0; i < 52; i = i+4) {
+				string1 += "<tr>";
+				string1 += "<td>" + arrayName[i] + "</td>";
+				string1 += "<td>" + arrayName[i+1] + "</td>";
+				string1 += "<td>" + arrayName[i+2] + "</td>";
+				string1 += "<td>" + arrayName[i+3] + "</td>";
+				string1 += "</tr>";
+			}
+			string1 += "</table>";
+			document.getElementById(boxNumber).innerHTML = string1;
+		}
+
+		function initialize() {
+			var i = 0;
+			var temp = 0;
+			var orderedDeck = new Array(
+			"2 Clubs", "3 Clubs", "4 Clubs", "5 Clubs", "6 Clubs", 
+			"7 Clubs", "8 Clubs", "9 Clubs", "10 Clubs", "Jack Clubs", 
+			"Queen Clubs", "King Clubs", "Ace Clubs",
+			"2 Spades", "3 Spades", "4 Spades", "5 Spades", "6 Spades", 
+			"7 Spades", "8 Spades", "9 Spades", "10 Spades", "Jack Spades", 
+			"Queen Spades", "King Spades", "Ace Spades",
+			"2 Hearts", "3 Hearts", "4 Hearts", "5 Hearts", "6 Hearts", 
+			"7 Hearts", "8 Hearts", "9 Hearts", "10 Hearts", "Jack Hearts", 
+			"Queen Hearts", "King Hearts", "Ace Hearts",
+			"2 Diamonds", "3 Diamonds", "4 Diamonds", "5 Diamonds", "6 Diamonds", 
+			"7 Diamonds", "8 Diamonds", "9 Diamonds", "10 Diamonds", "Jack Diamonds", 
+			"Queen Diamonds", "King Diamonds", "Ace Diamonds");
+			showDeck(orderedDeck, "box1");
+
+			var shuffledDeck = new Array();
+
+			for (i=0; i<52; i++){
+				var temp1 = Math.floor(Math.random()*(orderedDeck.length));
+				shuffledDeck[i] = orderedDeck[temp1];
+				orderedDeck[temp1] = orderedDeck[0];
+
+				console.log("The orderedDeck BEFORE THE SHIFT is " + orderedDeck);
+
+				orderedDeck.shift();
+				console.log("The orderedDeck now contains " + orderedDeck);
+				console.log("The shuffledDeck now contains " +shuffledDeck);
+			}
+
+			showDeck(shuffledDeck, "box2");
+		}
+
+	</script>
+</head>
+<body onload="initialize()">
+<h1>Shuffle Example 2</h1>
+<div id="box1"></div>
+<div id="box2"></div>
+
+</body>
+</html>
